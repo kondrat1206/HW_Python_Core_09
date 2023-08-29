@@ -10,16 +10,13 @@ show all : Show contact list
 good bye, close, exit : print \"Good bye!\" and exit
 """
 
-phone_book = {
-    "ivan" : "+380681234565",
-    "natali" : "+379998882211"
-}
+phone_book = {}
 
 
 def input_error(func):
 
     def inner(word_list):
-        
+
         if func.__name__ != "phone":
             if len(word_list) > 1:
                 name = word_list[0]
@@ -142,8 +139,7 @@ def main():
         if not command:
             print(f"YOU ENTERED A WRONG COMMAND!!!\n{help}\nTRY AGAIN!!!")
             continue
-        #else:
-            #print(f"Executing command {command}")
+
         result = handler(command)(word_list)
         if result == 'exit':
             print("Good bye!")
