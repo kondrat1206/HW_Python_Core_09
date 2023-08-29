@@ -93,6 +93,16 @@ def show_all(word_list):
     return result
 
 
+commands = {
+    "hello" : hello,
+    "exit" : exit,
+    "add" : add,
+    "change" : change,
+    "phone" : phone,
+    "show_all" : show_all
+}
+
+
 def parser(string: str):
 
     word_list = string.split(' ')
@@ -121,14 +131,7 @@ def handler(command):
 
     return commands[command]
 
-commands = {
-    "hello" : hello,
-    "exit" : exit,
-    "add" : add,
-    "change" : change,
-    "phone" : phone,
-    "show_all" : show_all
-}
+
     
 
 def main():
